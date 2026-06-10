@@ -1,0 +1,293 @@
+/* ─── MarketplaceView ─── */
+.marketplace-view {
+    padding: 0 1rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Hero Banner */
+.market-hero {
+    background: linear-gradient(135deg, #1b5e20 0%, #43a047 50%, #66bb6a 100%);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(46, 125, 50, 0.3);
+}
+
+.market-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.market-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.market-hero h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.market-hero p {
+    margin: 0 0 1.25rem;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+}
+
+.market-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: #1b5e20;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.market-hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Title */
+.market-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary, #1f2937);
+    margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Category Grid */
+.market-categories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.market-cat-card {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 14px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.market-cat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+    border-color: #2e7d32;
+}
+
+.market-cat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.cat-pesticides .market-cat-icon {
+    background: #fce4ec;
+    color: #c62828;
+}
+
+.cat-fertilizers .market-cat-icon {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.cat-seeds .market-cat-icon {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.cat-equipment .market-cat-icon {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.cat-irrigation .market-cat-icon {
+    background: #e0f7fa;
+    color: #00838f;
+}
+
+.cat-feed .market-cat-icon {
+    background: #fbe9e7;
+    color: #bf360c;
+}
+
+.cat-organic .market-cat-icon {
+    background: #f1f8e9;
+    color: #558b2f;
+}
+
+.cat-tools .market-cat-icon {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.market-cat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text-primary, #374151);
+    line-height: 1.2;
+}
+
+/* Info Cards */
+.market-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.market-info-card {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.2s;
+}
+
+.market-info-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.info-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-icon-box.green {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.info-icon-box.blue {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.info-icon-box.amber {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.info-text h4 {
+    margin: 0 0 2px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary, #1f2937);
+}
+
+.info-text p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary, #6b7280);
+    line-height: 1.3;
+}
+
+/* Open Market Button */
+.market-open-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #2e7d32, #43a047);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(46, 125, 50, 0.3);
+}
+
+.market-open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.4);
+}
+
+/* Dark mode support */
+[data-theme="dark"] .market-cat-card {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border-color, #333);
+}
+
+[data-theme="dark"] .market-info-card {
+    background: var(--card-bg, #1e1e1e);
+    border-color: var(--border-color, #333);
+}
+
+[data-theme="dark"] .market-section-title {
+    color: var(--text-primary, #e0e0e0);
+}
+
+[data-theme="dark"] .market-cat-label {
+    color: var(--text-primary, #e0e0e0);
+}
+
+[data-theme="dark"] .info-text h4 {
+    color: var(--text-primary, #e0e0e0);
+}
+
+[data-theme="dark"] .info-text p {
+    color: var(--text-secondary, #9e9e9e);
+}

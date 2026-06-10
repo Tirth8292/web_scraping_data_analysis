@@ -1,0 +1,165 @@
+/* Modern Login/Register CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container,
+.container1 {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    margin: 2rem;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#reg1 {
+    max-width: 600px;
+    height: auto;
+}
+
+.login-fo h2,
+#fo-lo h2 {
+    color: #111827;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    margin-top: 0;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+}
+
+.content-form {
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.lo-lab {
+    margin-bottom: 0.5rem;
+}
+
+.lo-lab label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.lo-inp input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    background: #f9fafb;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    height: auto;
+}
+
+.lo-inp input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Specifically for inputs that were white on white */
+#lo-in1,
+#lo-in2 {
+    border-color: #d1d5db;
+    color: #111827;
+}
+
+#btn-l-r {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn,
+.btn-reg {
+    padding: 0.75rem 2rem;
+    height: auto;
+    width: 100%;
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn:hover,
+.btn-reg:hover {
+    background-color: #4338ca;
+}
+
+form button[name="register_con"] {
+    background-color: white;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+}
+
+form button[name="register_con"]:hover {
+    background-color: #f5f3ff;
+}
+
+/* Register layout adjustment */
+#na-la,
+#na-la2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+#na-la>div,
+#na-la2>div {
+    width: 100%;
+}
+
+input {
+    color: black !important;
+    /* Force text color */
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+
+    #na-la,
+    #na-la2 {
+        grid-template-columns: 1fr;
+    }
+
+    .container,
+    .container1 {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .login-fo h2,
+    #fo-lo h2 {
+        font-size: 1.5rem;
+    }
+}

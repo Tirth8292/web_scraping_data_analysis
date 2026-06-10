@@ -1,0 +1,247 @@
+/* Modern Admin Panel CSS */
+:root {
+    --primary: #4f46e5;
+    --sidebar-bg: #1e293b;
+    --sidebar-text: #e2e8f0;
+    --bg-color: #f1f5f9;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.side-1 {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    z-index: 10;
+}
+
+.logo {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo img {
+    height: auto;
+    width: 80%;
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.logo h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+    top: 0;
+}
+
+.content-box {
+    padding: 2rem 0;
+    height: auto;
+    top: 0;
+}
+
+.content-items-oper {
+    margin: 0.5rem 1rem;
+}
+
+.content-items-oper a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.content-items-oper a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 0.5rem auto;
+    width: 80% !important;
+}
+
+/* Main Content */
+.side-2 {
+    margin-left: 250px;
+    flex: 1;
+    padding: 2rem;
+    border: none;
+    height: auto;
+    background-color: var(--bg-color);
+}
+
+.head2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-weight: 700;
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Forms */
+.ad-m {
+    height: auto;
+    padding: 0;
+}
+
+.li-in {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.in-f {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.la-in-f {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.in input,
+.in select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.in input:focus,
+.in select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.in input[disabled] {
+    background-color: #f1f5f9;
+}
+
+.btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+}
+
+/* Tables */
+#con-all {
+    height: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.tb-all {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: none;
+}
+
+.tb-all th {
+    background-color: #f8fafc;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tb-all td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.tb-all tr:last-child td {
+    border-bottom: none;
+}
+
+/* Dashboard Widgets */
+#ad-it1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.ad_it_1 {
+    width: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ad_ti_pr {
+    color: white;
+    height: auto;
+}
+
+.ad_it_ti_pr {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+}
+
+.in-f div:first-child {
+    margin-bottom: 0.5rem;
+}

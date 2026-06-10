@@ -1,0 +1,266 @@
+/* Modern User Dashboard CSS */
+.bottom-img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #e0e7ff;
+    --secondary: #64748b;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --text-dark: #1e293b;
+    --text-light: #475569;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+}
+
+h2.head2 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* Override side-1 for user dashboard specifically if mixed usage */
+.side-1 {
+    background-color: var(--card-bg) !important;
+    border-right: 1px solid var(--border-color);
+    width: 260px;
+    height: 100vh;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+    position: fixed;
+    top: 110px;
+    /* Start below the header */
+    left: 0;
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    /* Normal internal padding */
+    height: calc(100vh - 110px);
+    /* Fill remaining height */
+    overflow-y: auto;
+    /* Scrollable if content too long */
+}
+
+.content-box {
+    padding: 20px;
+}
+
+.content-box h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-items-oper a {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.content-items-oper a:hover {
+    background-color: var(--primary-light);
+    color: var(--primary) !important;
+    transform: translateX(4px);
+}
+
+.content-items-oper i {
+    font-size: 1.2rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 0;
+    width: 100% !important;
+}
+
+/* Main Dashboard Area */
+.side-2 {
+    margin-left: 260px;
+    padding: 30px;
+    background-color: var(--bg-main);
+    min-height: 100vh;
+    box-shadow: none !important;
+    border: none !important;
+    width: auto !important;
+}
+
+/* Profile Form Card */
+.ad-m {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.li-in {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.in-f {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.la-in-f {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.in input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #f8fafc;
+}
+
+.in input:focus {
+    background-color: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    outline: none;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-block;
+    width: auto;
+    min-width: 150px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #4338ca;
+    /* darker indigo */
+}
+
+/* Address Cards from style4.css refactored */
+.admin-address {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 20px 0;
+    height: auto;
+}
+
+.account-num-address {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 24px;
+    height: auto;
+    min-height: 180px;
+    width: auto;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.account-num-address:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.edit-del-but {
+    position: static;
+    /* Remove absolute positioning */
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+}
+
+.acc-add-btn {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    transition: all 0.2s;
+}
+
+.acc-add-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+#add-new-add {
+    font-size: 3rem;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #f1f5f9;
+    border: 2px dashed var(--border-color);
+}
+
+#add-new-add:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .side-1 {
+        width: 80px;
+        /* Collapsed sidebar for mobile if needed, or hide */
+    }
+
+    .side-2 {
+        margin-left: 80px;
+        padding: 15px;
+    }
+
+    .content-items-oper a span {
+        display: none;
+        /* Hide text on small screens if we had spans */
+    }
+}

@@ -1,0 +1,287 @@
+/* ── Light Theme (Default) ─────────────────────────────────── */
+:root {
+  --primary-green: #34C759;
+  --primary-blue: #30B0C7;
+  --blue-gradient-start: #29B6F6;
+  --blue-gradient-end: #0288D1;
+
+  --bg-color: #F5F7FA;
+  --bg-secondary: #EFEFEF;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(0, 0, 0, 0.06);
+
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  --border-color: #E5E7EB;
+  --input-bg: #F1F3F4;
+  --input-text: #333;
+
+  --header-bg: #FFFFFF;
+  --header-border: #EEEEEE;
+
+  --nav-bg: #FFFFFF;
+  --nav-border: #F0F0F0;
+  --nav-active: #4CAF50;
+  --nav-inactive: #9E9E9E;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  --danger: #EF4444;
+  --warning: #F59E0B;
+
+  --rec-card-bg: #FFFFFF;
+  --demo-banner-bg: #fff3cd;
+  --demo-banner-color: #856404;
+  --demo-banner-border: #ffeeba;
+  --spinner-track: #f3f3f3;
+
+  --breakdown-warn-bg: #FFF3E0;
+  --breakdown-warn-color: #7B3F00;
+  --breakdown-ok-bg: #F1F8E9;
+  --breakdown-ok-color: #2E7D32;
+}
+
+/* ── Dark Theme ────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-color: #0F1117;
+  --bg-secondary: #1A1D27;
+  --card-bg: #1E2130;
+  --card-border: rgba(255, 255, 255, 0.07);
+
+  --text-primary: #F0F2F5;
+  --text-secondary: #A0A8B8;
+  --text-muted: #6B7280;
+
+  --border-color: #2D3143;
+  --input-bg: #252840;
+  --input-text: #E0E4EE;
+
+  --header-bg: #1A1D27;
+  --header-border: #2D3143;
+
+  --nav-bg: #1A1D27;
+  --nav-border: #2D3143;
+  --nav-active: #4CAF50;
+  --nav-inactive: #6B7280;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  --rec-card-bg: #1E2130;
+  --demo-banner-bg: #2A2200;
+  --demo-banner-color: #F59E0B;
+  --demo-banner-border: #4A3A00;
+  --spinner-track: #2D3143;
+
+  --breakdown-warn-bg: #2A1A00;
+  --breakdown-warn-color: #FFBA77;
+  --breakdown-ok-bg: #0D2110;
+  --breakdown-ok-color: #81C784;
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+html {
+  background-color: var(--bg-color);
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ── Layout ───────────────────────────────────────────────── */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  padding-bottom: 80px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .weather-card,
+  .status-row {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 20px 80px 20px;
+  }
+
+  .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .weather-card {
+    grid-column: 1 / 3;
+  }
+
+  .status-row {
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Utilities ────────────────────────────────────────────── */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── View Containers ──────────────────────────────────────── */
+.view-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 16px;
+  margin: 0 auto;
+  animation: fadeIn 0.4s ease-in-out;
+  grid-column: 1 / -1;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.view-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+/* ── Recommendation Cards ─────────────────────────────────── */
+.recommendation-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.recommendation-card {
+  display: flex;
+  align-items: center;
+  background: var(--rec-card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid #2E7D32;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recommendation-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+  .recommendation-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .view-container {
+    padding: 24px;
+  }
+}
+
+/* ── Animations ───────────────────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Loading Spinner ──────────────────────────────────────── */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--spinner-track);
+  border-top: 4px solid var(--primary-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Demo Banner ──────────────────────────────────────────── */
+.demo-banner {
+  background: var(--demo-banner-bg);
+  color: var(--demo-banner-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 12px;
+  border: 1px solid var(--demo-banner-border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

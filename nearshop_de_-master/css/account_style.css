@@ -1,0 +1,347 @@
+/* Account/Dashboard Specific Styles */
+:root {
+    --primary: #4f46e5;
+    --primary-light: #e0e7ff;
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+}
+
+/* Sidebar Styling - Positioned below fixed header */
+.side-1 {
+    background-color: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    width: 260px;
+    height: calc(100vh - 110px);
+    /* Fill remaining height below header */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.02);
+    position: fixed;
+    top: 102px;
+    /* Precise offset for sticky header */
+    left: 0;
+    z-index: 40;
+    /* Below header (100) */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.content-box {
+    padding: 20px;
+}
+
+.content-box h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sidebar Navigation Links */
+.content-items-oper a {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.content-items-oper a:hover {
+    background-color: var(--primary-light);
+    color: var(--primary) !important;
+    transform: translateX(4px);
+}
+
+.content-items-oper i,
+.content-items-oper svg {
+    font-size: 1.2rem;
+    width: 20px;
+    /* Fixed width for alignment */
+    text-align: center;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 0;
+    width: 100%;
+}
+
+/* Main Content Area */
+.side-2 {
+    margin-left: 260px;
+    /* Matches sidebar width */
+    padding: 40px;
+    background-color: var(--bg-main);
+    min-height: 85vh;
+    border: none !important;
+    width: auto !important;
+}
+
+h2.head2 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+/* Address Cards */
+.admin-address {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.account-num-address {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 24px;
+    min-height: 180px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.account-num-address:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+/* Add New Address Button (Card) */
+#add-new-add {
+    background-color: #f1f5f9;
+    border: 2px dashed var(--border-color);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#add-new-add:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+}
+
+.edit-del-but {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.acc-add-btn {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.acc-add-btn:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Forms (Change Password / Edit Details) */
+.ad-m {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.in-f {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.la-in-f {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.in input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    outline: none;
+    transition: all 0.2s;
+    color: var(--text-dark);
+}
+
+.in input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+}
+
+.btn:hover {
+    background-color: #4338ca;
+}
+
+/* Order Tables in History */
+.checkout-det {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+}
+
+.ch-de {
+    width: 100%;
+}
+
+.ch-pr1 {
+    /* Table Header */
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr 1fr 1fr auto;
+    background-color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.ch-pr {
+    /* Table Row */
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr 1fr 1fr auto;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    gap: 10px;
+}
+
+.ch-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: #fff;
+}
+
+.ch-name1 h3,
+.ch-pr-price1 h3,
+.ch-pr-price2 h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.bottom-img {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: var(--radius);
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .side-1 {
+        width: 60px;
+        padding-top: 10px;
+    }
+
+    .side-1 h3,
+    .content-items-oper span,
+    .content-items-oper a {
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .content-items-oper a span {
+        /* Assuming span wraps text, if not, hide text via font-size or similar */
+        display: none;
+    }
+
+    .side-1 h3 {
+        font-size: 0;
+    }
+
+    .side-1 h3::before {
+        content: '...';
+        font-size: 1.5rem;
+    }
+
+    .side-2 {
+        margin-left: 60px;
+        padding: 20px;
+    }
+
+    .ch-pr1,
+    .ch-pr {
+        grid-template-columns: 60px 1fr 1fr;
+        /* Simplified for mobile */
+        gap: 10px;
+    }
+
+    .ch-pr-price1:nth-child(4),
+    /* Hide less important cols on mobile */
+    .ch-pr-price1:nth-child(5) {
+        display: none;
+    }
+}

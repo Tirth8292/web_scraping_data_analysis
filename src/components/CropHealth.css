@@ -1,0 +1,134 @@
+.crop-info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.crop-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.crop-name {
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.crop-icon {
+    font-size: 18px;
+}
+
+.stage-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.spacer {
+    height: 16px;
+}
+
+.risk-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 90px;
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+}
+
+.risk-badge .check-circle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    color: #4CAF50;
+    border-radius: 50%;
+    margin: 0 auto 6px auto;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.risk-badge div {
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+.risk-badge .level {
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 1;
+}
+
+.health-bar-container {
+    margin-top: 10px;
+}
+
+.health-percent {
+    font-size: 12px;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+/* Score breakdown button */
+.score-breakdown-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+/* Breakdown item rows */
+.breakdown-list {
+    margin-top: 8px;
+    font-size: 12.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.breakdown-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--breakdown-warn-bg);
+    border-radius: 6px;
+    color: var(--breakdown-warn-color);
+}
+
+.breakdown-positive {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--breakdown-ok-bg);
+    border-radius: 6px;
+    color: var(--breakdown-ok-color);
+}
+
+.breakdown-empty {
+    padding: 6px 10px;
+    color: var(--text-muted);
+    font-size: 12px;
+}

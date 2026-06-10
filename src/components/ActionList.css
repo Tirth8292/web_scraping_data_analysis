@@ -1,0 +1,44 @@
+.action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F9FAFB;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #F3F4F6;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.action-item:hover {
+    transform: translateX(4px);
+    background: #F3F4F6;
+}
+
+.action-icon-bg {
+    width: 32px;
+    height: 32px;
+    background: #E3F2FD;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.action-text {
+    flex: 1;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.action-arrow {
+    flex-shrink: 0;
+}

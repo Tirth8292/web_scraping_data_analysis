@@ -1,0 +1,225 @@
+.header {
+    padding: 16px 20px;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo-img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.app-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2E7D32;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.icon-btn:hover {
+    background-color: var(--bg-secondary);
+}
+
+/* Dark mode toggle button */
+.dark-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 17px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.dark-btn:hover {
+    background: var(--bg-secondary);
+    transform: scale(1.1);
+}
+
+.search-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    padding: 6px 12px;
+    border-radius: 8px;
+    gap: 8px;
+    animation: fadeIn 0.2s ease;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    flex: 1;
+    outline: none;
+    font-size: 14px;
+    color: var(--input-text);
+}
+
+.search-icon-input {
+    color: var(--text-muted);
+}
+
+.close-search {
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Language dropdown */
+.lang-dropdown-wrapper {
+    position: relative;
+}
+
+.lang-chevron {
+    transition: transform 0.2s ease;
+    opacity: 0.6;
+}
+
+.lang-chevron.open {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--header-border);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    min-width: 140px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: dropdownFade 0.2s ease;
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s;
+    width: 100%;
+    text-align: left;
+}
+
+.lang-option:hover {
+    background: var(--bg-secondary);
+}
+
+.lang-option.active {
+    background: rgba(46, 125, 50, 0.1);
+    color: #2E7D32;
+}
+
+@keyframes dropdownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,271 @@
+/* Now sits inside .view-container, so inherits its padding / max-width / animation.
+   We only add vertical flow + optional desktop grid here. */
+.weather-detail-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+    .weather-detail-view {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+    }
+
+    .weather-detail-view> :nth-child(1) {
+        grid-column: 1 / 2;
+    }
+
+    .weather-detail-view> :nth-child(2) {
+        grid-column: 2 / 3;
+        height: 100%;
+    }
+
+    .weather-detail-view> :nth-child(3),
+    .weather-detail-view> :nth-child(4) {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ── Details Grid ─────────────────────────────────── */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+@media (min-width: 600px) {
+    .details-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary);
+    padding: 12px 10px;
+    border-radius: 14px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.detail-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.detail-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    color: white;
+}
+
+.icon-bg-orange {
+    background: linear-gradient(135deg, #FF6B35, #FF9A44);
+}
+
+.icon-bg-blue {
+    background: linear-gradient(135deg, #2196F3, #64B5F6);
+}
+
+.icon-bg-cyan {
+    background: linear-gradient(135deg, #00BCD4, #4DD0E1);
+}
+
+.icon-bg-teal {
+    background: linear-gradient(135deg, #009688, #4DB6AC);
+}
+
+.icon-bg-purple {
+    background: linear-gradient(135deg, #9C27B0, #BA68C8);
+}
+
+.icon-bg-green {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+}
+
+.detail-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.detail-value {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* ── Forecast Chart ───────────────────────────────── */
+.forecast-chart-card {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.forecast-chart-wrap {
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ── Chart Tooltip ────────────────────────────────── */
+.chart-tooltip {
+    background: var(--card-bg, #fff);
+    border: 1px solid var(--card-border, #e0e0e0);
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    font-size: 12px;
+}
+
+.chart-tooltip-label {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.chart-tooltip-row {
+    margin: 2px 0;
+    font-weight: 500;
+}
+
+/* ── Forecast Cards (Scroll) ─────────────────────── */
+.forecast-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.forecast-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.forecast-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.forecast-scroll::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 4px;
+    opacity: 0.3;
+}
+
+.forecast-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 90px;
+    padding: 16px 12px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+}
+
+.forecast-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.fc-time {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.3px;
+}
+
+.fc-icon {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.fc-temp {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+/* Mini rain bar inside forecast card */
+.fc-rain-bar {
+    width: 24px;
+    height: 32px;
+    background: rgba(33, 150, 243, 0.12);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fc-rain-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, #2196F3, #64B5F6);
+    border-radius: 6px;
+    transition: height 0.4s ease;
+}
+
+.fc-rain-label {
+    font-size: 10px;
+    color: #2196F3;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 600;
+}

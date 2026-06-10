@@ -1,0 +1,64 @@
+.admin-address{
+    margin: 5px 60px;
+    padding: 2px 70px;
+    height: 375px;
+    /* border: 2px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.account-num-address{
+    margin: 25px 2px;
+    padding: 20px 20px;
+    border: 2px solid;
+    height: 130px;
+    width: 280px;
+    box-shadow: 8px 8px 2px 0px rgb(181, 226, 211);
+    border-bottom-right-radius: 30px;
+    text-align: left;
+    font-size: 22px;
+    text-wrap: balance;
+}
+#add-new-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    border: 2px solid black;
+    color: black;
+}
+.edit-del-but{
+    position: absolute;
+    top: 440px;
+    display: flex;
+    justify-content: left;
+}
+.acc-add-btn{
+    height: 30px;
+    width: 70px;
+    background: aliceblue;
+    border-radius: 50px;
+    font-size: 15px;
+    box-shadow: 2px 2px 0px 0px;
+}
+.edit-add-bl{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 290px;
+}
+.edit-add-la{
+    font-size: xx-large;
+    position: relative;
+    top: -45px;
+    left: 50px;
+}
+.edit-add-textarea{
+    width: 280px;
+    height: 100px;
+    border: 2px solid;
+    box-shadow: 2px 2px 0px 0px;
+    border-radius: 5px;
+    font-size: 22px;
+    text-wrap: balance;
+}
